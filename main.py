@@ -20,8 +20,6 @@ from selenium import webdriver
 
 def sele_browser(url_input):
     """
-
-
     :param url_input:
     :return:
     """
@@ -33,16 +31,13 @@ def sele_browser(url_input):
     browser.get(url_input)
 
 
-
-
-
 if __name__ == '__main__':
     """
     using main for initial set-up and debugging
 
     TODO :: once project gets off the ground begin setting up unittest
     """
-    url = "https://smartweb.madisoncountysheriffal.org/SmartWEBClient/Jail.aspx"
+    url = "http://smartweb.madisoncountysheriffal.org/SmartWEBClient/Jail.aspx"
 
     sele_browser(url)
 

@@ -15,13 +15,46 @@
 """
 from data_retrieval_module.basics import page_retrieval, save_page_as_text_binary
 
+from selenium import webdriver
+
+
+def sele_browser(url):
+
+    browser = webdriver.Firefox()
+
+    print(type(browser))
+
+    browser.get(url)
+
+
+
+
+
 if __name__ == '__main__':
     """
     using main for initial set-up and debugging
 
     TODO :: once project gets off the ground begin setting up unittest
     """
+    url = "https://smartweb.madisoncountysheriffal.org/SmartWEBClient/Jail.aspx"
 
-    response_object = page_retrieval("http://smartweb.madisoncountysheriffal.org/SmartWEBClient/Jail.aspx")
+    sele_browser(url)
 
-    save_page_as_text_binary(response_object)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # response_object = page_retrieval(url)
+    # save_page_as_text_binary(response_object)

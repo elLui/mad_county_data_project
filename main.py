@@ -20,14 +20,13 @@ from selenium import webdriver
 
 def sele_browser(url_input):
     """
-    installed ChromeDriver from:
-    https://chromedriver.storage.googleapis.com/index.html?path=92.0.4515.107/
-    using Chrome version :: Version 92.0.4515.131 (Official Build) (64-bit)
+
+
     :param url_input:
     :return:
     """
 
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox()
 
     print(type(browser))
 

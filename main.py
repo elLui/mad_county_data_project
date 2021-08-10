@@ -18,13 +18,20 @@ from data_retrieval_module.basics import page_retrieval, save_page_as_text_binar
 from selenium import webdriver
 
 
-def sele_browser(url):
+def sele_browser(url_input):
+    """
+    installed ChromeDriver from:
+    https://chromedriver.storage.googleapis.com/index.html?path=92.0.4515.107/
+    using Chrome version :: Version 92.0.4515.131 (Official Build) (64-bit)
+    :param url_input:
+    :return:
+    """
 
-    browser = webdriver.Firefox()
+    browser = webdriver.Chrome()
 
     print(type(browser))
 
-    browser.get(url)
+    browser.get(url_input)
 
 
 

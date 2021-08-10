@@ -16,6 +16,7 @@
 from data_retrieval_module.basics import page_retrieval, save_page_as_text_binary
 
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 
 
 def sele_browser(url_input):
@@ -23,12 +24,29 @@ def sele_browser(url_input):
     :param url_input:
     :return:
     """
-
+    # using Firefox ver 91.0
     browser = webdriver.Firefox()
 
     print(type(browser))
 
     browser.get(url_input)
+
+    """
+    selecting element id from page options follow:
+    
+    value="0" Current Inmates Only
+    value="1" Released Inmates Only
+    value="2" Both Current And Released
+    """
+    search_type = Select(browser.find_element_by_id("TypeSearch"))
+    search_type.select_by_value('2')
+
+    first_submit = browser.find_element_by_name("btnSumit")
+    first_submit.click()
+
+    # TODO :: once initial query is submitted bottom of page has a load more button that appears -
+    # TODO :: need to consider being able to load the entire catalog vs. making loops to extract portions
+    # TODO :: based on alphabetical rankings
 
 
 if __name__ == '__main__':
@@ -40,13 +58,6 @@ if __name__ == '__main__':
     url = "http://smartweb.madisoncountysheriffal.org/SmartWEBClient/Jail.aspx"
 
     sele_browser(url)
-
-
-
-
-
-
-
 
 
 
